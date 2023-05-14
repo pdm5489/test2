@@ -28,10 +28,11 @@ ds=wrap_lat(ds,mode=-90)
 comp = dict(zlib=True, complevel=6)
 encoding = {var: comp for var in ds.data_vars}
 ds.to_netcdf("E:\\sattelite\\imerg-merging - version 1\\comp_transpos_imerg_2000_2021.nc", encoding=encoding, unlimited_dims='time')
-print(1)
+
 p_year = ds.groupby("time.year").sum("time")
 trend = p_year['precipitationCal'].polyfit(dim="year", deg=1)
 
+print('salam')
 
 fig, ax = plt.subplots(subplot_kw=dict(projection=ccrs.PlateCarree()), figsize=(18, 7))
 #ax.set_extent([-10, 60, 30, 65])
