@@ -5,7 +5,7 @@ import cartopy.crs as ccrs
 
 # Open the dataset
 ds = xr.open_dataset('E:\\imerg-new\\imerg_2000_2021.nc')
-
+print(1)
 # Define the bounding box coordinates
 lat_min, lat_max = 40, 65
 lon_min, lon_max = 20, 40
