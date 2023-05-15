@@ -7,10 +7,8 @@ import cartopy.crs as ccrs
 
 with xr.open_dataset('C:\\Users\\ASUS\\Downloads\\G3P_v1.11\\IRAN_DATA_SWE_1km.nc') as ds:
     print("data ready")
-comp = dict(zlib=True, complevel=6)
-encoding = {var: comp for var in ds.data_vars}
-ds.to_netcdf("C:\\Users\\ASUS\\Downloads\\G3P_v1.11\\IRAN_DATA_SWE_1km_comp.nc", encoding=encoding, unlimited_dims='time')
 
+print(1)
 #convert monthly to yearly mean
 SWE_Yearly = ds.groupby("time.year").mean("time")
 #calculate linear yearly trend
